@@ -1,0 +1,13 @@
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\bin\Debug\netcoreapp3.1\ConsoleCalculator.exe
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\bin\Debug\netcoreapp3.1\ConsoleCalculator.deps.json
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\bin\Debug\netcoreapp3.1\ConsoleCalculator.runtimeconfig.json
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\bin\Debug\netcoreapp3.1\ConsoleCalculator.runtimeconfig.dev.json
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\bin\Debug\netcoreapp3.1\ConsoleCalculator.dll
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\bin\Debug\netcoreapp3.1\ConsoleCalculator.pdb
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\obj\Debug\netcoreapp3.1\ConsoleCalculator.csprojAssemblyReference.cache
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\obj\Debug\netcoreapp3.1\ConsoleCalculator.AssemblyInfoInputs.cache
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\obj\Debug\netcoreapp3.1\ConsoleCalculator.AssemblyInfo.cs
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\obj\Debug\netcoreapp3.1\ConsoleCalculator.csproj.CoreCompileInputs.cache
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\obj\Debug\netcoreapp3.1\ConsoleCalculator.dll
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\obj\Debug\netcoreapp3.1\ConsoleCalculator.pdb
+E:\Programming\Projects\Git\net-essentials\ConsoleCalculator\ConsoleCalculator\obj\Debug\netcoreapp3.1\ConsoleCalculator.genruntimeconfig.cache

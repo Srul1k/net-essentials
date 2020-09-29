@@ -4,16 +4,15 @@ namespace ConsoleCalculator
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-            var buffer = Console.ReadLine().Split(' ');
 
-            if (buffer.Length == 3 &&
-                TryParseWithSpecifiedRange(buffer[0], out double x) &&
-                TryParseWithSpecifiedRange(buffer[1], out double y))
+            if (args.Length == 3 &&
+                TryParseWithSpecifiedRange(args[0], out double x) &&
+                TryParseWithSpecifiedRange(args[1], out double y))
             {
-                switch (buffer[2])
+                switch (args[2])
                 {
                     case "A":
                         Console.WriteLine(x + y);

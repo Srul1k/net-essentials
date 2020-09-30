@@ -36,8 +36,6 @@ namespace ConsoleCalculator
 
         private static bool TryParseWithSpecifiedRange(string s, out double x)
         {
-            bool result;
-
             var buffer = s.Split('.');
             if (buffer.Length > 1)
                 if (buffer[1].Length > 5)
@@ -46,8 +44,7 @@ namespace ConsoleCalculator
                     return false;
                 }
             
-            result = double.TryParse(s, out x);
-            return result && x >= -10000 & x <= 10000;
+            return double.TryParse(s, out x) && x >= -10000 && x <= 10000;
         }
     }
 }

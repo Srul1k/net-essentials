@@ -1,7 +1,7 @@
 ﻿using System;
-using Task3;
+using MoneyLibrary;
 
-namespace ExamplesOfCasesTask3
+namespace ExamplesOfCases
 {
     class Program
     {

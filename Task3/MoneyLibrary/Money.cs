@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task3
+namespace MoneyLibrary
 {
     public class Money
     {

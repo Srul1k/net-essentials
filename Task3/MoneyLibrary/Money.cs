@@ -1,114 +1,92 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace MoneyLibrary
 {
     public class Money
     {
-        private decimal amount;
-        private readonly Currency currency;
+        public decimal Amount { get; }  
+        public Currency Currency { get; }
+        public static Dictionary<(Currency, Currency), decimal> 
+            ExchangeRates { get; } = new Dictionary<(Currency, Currency), decimal>()
+            {
+                { (Currency.USD, Currency.BYN), 2m },
+                { (Currency.USD, Currency.EUR), 0.8m },
+                { (Currency.BYN, Currency.USD), 0.5m },
+                { (Currency.BYN, Currency.EUR), 0.4m },
+                { (Currency.EUR, Currency.USD), 10/8m },
+                { (Currency.EUR, Currency.BYN), 10/4m }
+            };
 
-        public Money(decimal amount, Currency currency)
+        public Money(decimal a, Currency c)
         {
-            this.amount = amount;
-            this.currency = currency;
+            Amount = a;
+            Currency = c;
         }
 
-        private static decimal ConvertToBYN(decimal amount, Currency currency)
+        private static decimal CurrencyConversion(Currency primary, Currency finite, decimal value)
         {
-            if (currency == Currency.USD)
-            {
-                return amount * 2;
-            }
-            else if (currency == Currency.EUR)
-            {
-                return amount / 0.4m;
-            }
-            else
-            {
-                return amount;
-            }
-        }
-
-        private static decimal ConvertFromBYN(decimal amount, Currency currency)
-        {
-            if (currency == Currency.USD)
-            {
-                return amount / 2;
-            }
-            else if (currency == Currency.EUR)
-            {
-                return amount * 0.4m;
-            }
-            else
-            {
-                return amount;
-            }
+            if (primary == finite) return value;
+            else return value * ExchangeRates[(primary, finite)];
         }
 
         public static Money operator ++(Money m)
         {
-            if (m.currency == Currency.USD)
+            if (m.Currency == Currency.USD)
             {
-                return new Money(m.amount += m.amount / 10, m.currency);
+                return new Money(m.Amount + m.Amount / 10, m.Currency);
             }
-            else if (m.currency == Currency.EUR)
+            else if (m.Currency == Currency.EUR)
             {
-                return new Money(m.amount += m.amount / 5, m.currency);
+                return new Money(m.Amount + m.Amount / 5, m.Currency);
             }
             else
             {
-                return new Money(m.amount += m.amount * 0.3m, m.currency);
+                return new Money(m.Amount + m.Amount * 0.3m, m.Currency);
             }
         }
 
         public static Money operator +(Money m1, Money m2)
         {
-            decimal amount = m1.amount + ConvertFromBYN(ConvertToBYN(m2.amount, m2.currency), m1.currency);
-            return new Money(amount, m1.currency);
+            decimal amount = m1.Amount + CurrencyConversion(m2.Currency, m1.Currency, m2.Amount);
+            return new Money(amount, m1.Currency);
         }
 
         public static Money operator -(Money m1, Money m2)
         {
-            decimal amount = m1.amount - ConvertFromBYN(ConvertToBYN(m2.amount, m2.currency), m1.currency);
-            return new Money(amount, m1.currency);
+            decimal amount = m1.Amount - CurrencyConversion(m2.Currency, m1.Currency, m2.Amount);
+            return new Money(amount, m1.Currency);
         }
 
         public static bool operator ==(Money m1, Money m2)
         {
-            return ConvertToBYN(m1.amount, m1.currency) ==
-                ConvertToBYN(m2.amount, m2.currency);
+            return m1.Amount == CurrencyConversion(m2.Currency, m1.Currency, m2.Amount);
         }
 
         public static bool operator !=(Money m1, Money m2)
         {
-            return ConvertToBYN(m1.amount, m1.currency) !=
-                ConvertToBYN(m2.amount, m2.currency);
+            return m1.Amount == CurrencyConversion(m2.Currency, m1.Currency, m2.Amount);
         }
 
         public static explicit operator string(Money m)
         {
-            return new string($"{m.amount:f5}_{m.currency}");
+            return $"{m.Amount:f5}_{m.Currency}";
         }
 
         public static implicit operator int(Money m)
         {
-            return (int)Math.Round(ConvertToBYN(m.amount, m.currency));
+            return (int)Math.Round(m.Amount * CurrencyConversion(m.Currency, Currency.BYN, m.Amount));
         }
 
         public override bool Equals(object obj)
         {
-            Money m = obj as Money;
-            if (obj as Money == null)
-            {
-                return false;
-            }
-
-            return amount == m.amount && currency == m.currency;
+            return obj is Money && GetHashCode() == obj.GetHashCode();
         }
 
         public override int GetHashCode()
         {
-            return amount.GetHashCode() + (int)currency;
+            return Amount.GetHashCode() + (int)Currency;
         }
     }
 }

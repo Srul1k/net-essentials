@@ -5,7 +5,7 @@ namespace ExamplesOfCases
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var m1 = new Money(100, Currency.USD);
             var m2 = new Money(200, Currency.EUR);
@@ -14,6 +14,11 @@ namespace ExamplesOfCases
             var m4 = m1 + m2; // 350 USD
             var m5 = m2 + m1; // 280 EUR
             Console.WriteLine(m4 == m5);
+
+            var m10 = new Money(100, Currency.USD);
+            var m11 = new Money(100, Currency.EUR);
+            Console.WriteLine(m1.Equals(m10));   //True
+            Console.WriteLine(m1.Equals(m11));   //False
 
             var m6 = m2 - m3; // 80 EUR
 

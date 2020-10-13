@@ -8,18 +8,17 @@ namespace ExamplesOfCases
     {
         static void Main()
         {
-			IShapeAreaCalculator areaCalculator = new ShapeAreaCalculator();
+            IShapeAreaCalculator areaCalculator = new ShapeAreaCalculator();
 
-			var shapes = new List<Shape>
-			{
-				new Triangle(2, 3),      // area = 3
-				new Circle(4),           // area = 12,5663706
-				new Rectangle(2, 3.5)    // area = 7
-			};
+            var shapes = new List<Shape>
+            {
+                new Triangle(2, 3),     // area = 3
+                new Rectangle(2, 3.5),  // area = 7
+                new Circle(4)           // area = 12.5663706
+            };
 
-			areaCalculator.Calculate(shapes); // 22.5663706
-
-			Console.WriteLine(shapes[0].Name); // Triangle
-		}
+            areaCalculator.Calculate(shapes);   // 22.5663706
+            Console.WriteLine(shapes[0].Name);  // Triangle 
+        }
     }
 }

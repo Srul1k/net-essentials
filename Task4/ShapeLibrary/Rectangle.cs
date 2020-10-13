@@ -6,18 +6,18 @@ namespace ShapeLibrary
 {
     public class Rectangle : Shape
     {
-        private double a;
-        private double b;
+        private double A { get; }
+        private double B { get; }
 
         public Rectangle(double a, double b) : base("Rectangle")
         {
-            this.a = a;
-            this.b = b;
+            A = a;
+            B = b;
         }
 
         public override double GetArea()
         {
-            return a * b;
+            return A * B;
         }
     }
 }

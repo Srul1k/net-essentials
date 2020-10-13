@@ -6,15 +6,15 @@ namespace ShapeLibrary
 {
     public class Circle : Shape
     {
-        private double d;
+        private double D { get; }
         public Circle(double d) : base("Circle")
         {
-            this.d = d;
+            D = d;
         }
 
         public override double GetArea()
         {
-            return Math.PI * Math.Pow(d / 2, 2);
+            return Math.PI * Math.Pow(D / 2, 2);
         }
     }
 }

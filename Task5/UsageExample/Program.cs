@@ -21,6 +21,7 @@ namespace UsageExample
 
             Console.WriteLine(dfs[7].Val); // H
             var n = dfs["E"];
+            dfs = new DfsSearch(null);
         }
     }
 }

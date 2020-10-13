@@ -14,18 +14,18 @@ namespace DfsSearchLibrary
         {
             indexingByNumber = new Dictionary<int, Node>();
             indexingByValue = new Dictionary<string, Node>();
-            ind = -1;
-            DFS(tree);
+            int startIndex = 0;
+            if (tree != null) IndexNodes(tree, ref startIndex);
         }
 
-        private void DFS(Node n)
+        private void IndexNodes(Node n, ref int ind)
         {
-            ind++;
             indexingByNumber.Add(ind, n);
             indexingByValue.Add(n.Val, n);
+            ind++;
 
-            if (n.Left != null) DFS(n.Left);
-            if (n.Right != null) DFS(n.Right);
+            if (n.Left != null) IndexNodes(n.Left, ref ind);
+            if (n.Right != null) IndexNodes(n.Right, ref ind);
         }
 
         public Node this[int index]

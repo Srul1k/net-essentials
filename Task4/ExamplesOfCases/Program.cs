@@ -16,7 +16,7 @@ namespace ExamplesOfCases
 				new Circle(4),           // area = 12,5663706
 				new Rectangle(2, 3.5)    // area = 7
 			};
-			
+
 			areaCalculator.Calculate(shapes); // 22.5663706
 
 			Console.WriteLine(shapes[0].Name); // Triangle

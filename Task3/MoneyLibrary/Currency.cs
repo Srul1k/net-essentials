@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MoneyLibrary
+﻿namespace MoneyLibrary
 {
     public enum Currency
     {

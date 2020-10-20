@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace MoneyLibrary
 {
@@ -33,17 +32,16 @@ namespace MoneyLibrary
 
         public static Money operator ++(Money m)
         {
-            if (m.Currency == Currency.USD)
+            switch(m.Currency)
             {
-                return new Money(m.Amount + m.Amount / 10, m.Currency);
-            }
-            else if (m.Currency == Currency.EUR)
-            {
-                return new Money(m.Amount + m.Amount / 5, m.Currency);
-            }
-            else
-            {
-                return new Money(m.Amount + m.Amount * 0.3m, m.Currency);
+                case Currency.USD:
+                    return new Money(m.Amount + m.Amount / 10, m.Currency);
+                case Currency.EUR:
+                    return new Money(m.Amount + m.Amount / 5, m.Currency);
+                case Currency.BYN:
+                    return new Money(m.Amount + m.Amount * 0.3m, m.Currency);
+                default:
+                    return m;
             }
         }
 

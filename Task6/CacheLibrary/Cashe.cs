@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CacheLibrary
 {
@@ -9,9 +10,9 @@ namespace CacheLibrary
     {
         private struct CasheItem
         {
-            public TKey Key { get; set; }
-            public TValue Value { get; set; }
-            public DateTime ExpiresOn { get; set; }
+            public TKey Key { get; }
+            public TValue Value { get; }
+            public DateTime ExpiresOn { get; }
 
             public CasheItem(TKey key, TValue value, DateTime expiresOn)
             {
@@ -23,29 +24,23 @@ namespace CacheLibrary
 
         private List<CasheItem> items;
 
-        public Cashe() { items = new List<CasheItem>(); }
+        public Cashe() => items = new List<CasheItem>();
 
         public void AddOrUpdate(TKey key, TValue value, DateTime expiresOn)
         {
-            foreach (var item in items)
-            {
-                if (item.Key.Equals(key))
-                {
-                    items.Remove(item);
-                }
-            }
+            var selectedItems = items.Where(i => i.Key.Equals(key));
+            if (selectedItems.Count() > 0) items.Remove(selectedItems.First());
             
             items.Add(new CasheItem(key, value, expiresOn));
         }
 
         public TValue Get(TKey key)
         {
-            foreach (var item in items)
+            var selectedItems = items.Where(i => i.Key.Equals(key));
+            if (selectedItems.Count() > 0)
             {
-                if (item.Key.Equals(key))
-                {
-                    return item.ExpiresOn > DateTime.Now ? item.Value : null;
-                }
+                var item = selectedItems.First();
+                return item.ExpiresOn > DateTime.Now ? item.Value : null;
             }
 
             return null;
@@ -53,13 +48,11 @@ namespace CacheLibrary
 
         public bool Remove(TKey key)
         {
-            foreach (var item in items)
+            var selectedItems = items.Where(i => i.Key.Equals(key));
+            if (selectedItems.Count() > 0)
             {
-                if (item.Key.Equals(key))
-                {
-                    items.Remove(item);
-                    return true;
-                }
+                items.Remove(selectedItems.First());
+                return true;
             }
 
             return false;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShapeLibrary
+﻿namespace ShapeLibrary
 {
     public class Rectangle : Shape
     {

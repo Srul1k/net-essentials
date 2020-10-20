@@ -28,19 +28,21 @@ namespace CacheLibrary
 
         public void AddOrUpdate(TKey key, TValue value, DateTime expiresOn)
         {
-            var selectedItems = items.Where(i => i.Key.Equals(key));
-            if (selectedItems.Count() > 0) items.Remove(selectedItems.First());
+            var selectedItem = items.FirstOrDefault(i => i.Key.Equals(key));
+            if (selectedItem.Equals(null))
+            {
+                items.Remove(selectedItem);
+            }
             
             items.Add(new CasheItem(key, value, expiresOn));
         }
 
         public TValue Get(TKey key)
         {
-            var selectedItems = items.Where(i => i.Key.Equals(key));
-            if (selectedItems.Count() > 0)
+            var selectedItem = items.FirstOrDefault(i => i.Key.Equals(key));
+            if (selectedItem.Equals(null))
             {
-                var item = selectedItems.First();
-                return item.ExpiresOn > DateTime.Now ? item.Value : null;
+                return selectedItem.ExpiresOn > DateTime.Now ? selectedItem.Value : null;
             }
 
             return null;
@@ -48,10 +50,10 @@ namespace CacheLibrary
 
         public bool Remove(TKey key)
         {
-            var selectedItems = items.Where(i => i.Key.Equals(key));
-            if (selectedItems.Count() > 0)
+            var selectedItem = items.FirstOrDefault(i => i.Key.Equals(key));
+            if (selectedItem.Equals(null))
             {
-                items.Remove(selectedItems.First());
+                items.Remove(selectedItem);
                 return true;
             }
 

@@ -10,6 +10,7 @@ namespace UsageExample
             var cashe = new Cashe<double, string>();
 
             cashe.AddOrUpdate(0.1, "seagull", new DateTime(0));
+            cashe.AddOrUpdate(0.1, "juice", new DateTime(0));
             cashe.AddOrUpdate(20.2, "tea", new DateTime(2999, 1, 1));
             cashe.AddOrUpdate(3, "coffe", new DateTime(2999, 1, 1));
 

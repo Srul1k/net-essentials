@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamplesOfCases", "ExamplesOfCases\ExamplesOfCases.csproj", "{78F7304A-328D-4001-A05F-47239C9FC885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyLibrary", "MoneyLibrary\MoneyLibrary.csproj", "{D6B102CE-8808-4C03-BF04-106581037B20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78F7304A-328D-4001-A05F-47239C9FC885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F7304A-328D-4001-A05F-47239C9FC885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F7304A-328D-4001-A05F-47239C9FC885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F7304A-328D-4001-A05F-47239C9FC885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6B102CE-8808-4C03-BF04-106581037B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6B102CE-8808-4C03-BF04-106581037B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6B102CE-8808-4C03-BF04-106581037B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6B102CE-8808-4C03-BF04-106581037B20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {252C1804-B600-43E0-B206-AB912A77FB5D}
+	EndGlobalSection
+EndGlobal

@@ -8,7 +8,7 @@ namespace CacheLibrary
         where TKey : struct 
         where TValue : class
     {
-        private struct CasheItem
+        private class CasheItem
         {
             public TKey Key { get; }
             public TValue Value { get; }
@@ -29,7 +29,7 @@ namespace CacheLibrary
         public void AddOrUpdate(TKey key, TValue value, DateTime expiresOn)
         {
             var selectedItem = items.FirstOrDefault(i => i.Key.Equals(key));
-            if (selectedItem.Equals(null))
+            if (selectedItem != null)
             {
                 items.Remove(selectedItem);
             }
@@ -40,7 +40,7 @@ namespace CacheLibrary
         public TValue Get(TKey key)
         {
             var selectedItem = items.FirstOrDefault(i => i.Key.Equals(key));
-            if (selectedItem.Equals(null))
+            if (selectedItem != null)
             {
                 return selectedItem.ExpiresOn > DateTime.Now ? selectedItem.Value : null;
             }
@@ -51,7 +51,7 @@ namespace CacheLibrary
         public bool Remove(TKey key)
         {
             var selectedItem = items.FirstOrDefault(i => i.Key.Equals(key));
-            if (selectedItem.Equals(null))
+            if (selectedItem != null)
             {
                 items.Remove(selectedItem);
                 return true;

@@ -2,7 +2,7 @@
 
 namespace DatabaseUsersLibrary
 {
-    public class Database : IDatabase, IReadUpdateWriteDatabase, IReadUpdateDatabase, IReadDatabase
+    public class Database : IReadUpdateWriteDatabase
     {
         public string Shema { get; }
 

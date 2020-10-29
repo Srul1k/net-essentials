@@ -2,8 +2,8 @@
 {
     public class StringParser : IStringParser
     {
-        public event IStringParser.StringEventHandler OnStringContainsBLetter;
-        public event IStringParser.StringEventHandler OnStringContainsZLetter;
+        public event StringEventHandler OnStringContainsBLetter;
+        public event StringEventHandler OnStringContainsZLetter;
 
         public void Parse(string str)
         {
@@ -16,14 +16,15 @@
                 if (letter.CompareTo('b') == 0)
                 {
                     bCount++;
-                    OnStringContainsBLetter(this, new StringEventArguments('B', bCount));
                 }
                 else if (letter.CompareTo('z') == 0)
                 {
                     zCount++;
-                    OnStringContainsZLetter(this, new StringEventArguments('Z', zCount));
                 }
             }
+
+            OnStringContainsBLetter(this, new StringEventArguments('B', bCount));
+            OnStringContainsZLetter(this, new StringEventArguments('Z', zCount));
         }
     }
 }

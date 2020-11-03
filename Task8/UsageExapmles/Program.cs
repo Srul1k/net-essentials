@@ -25,11 +25,13 @@ namespace UsageExapmles
                 .AddRule(x => x.Amount > 1000, t => $"Amount {t.Amount} is not correct. Should be more than 1000")
                 .Build();
 
-            var moneyResults = new List<ValidationResult<Money>>();
-            moneyResults.Add(moneyValidator.Validate(new Money(50, Currency.BYN)));
-            moneyResults.Add(moneyValidator.Validate(new Money(1100, Currency.USD)));
-            moneyResults.Add(moneyValidator.Validate(new Money(50, Currency.USD)));
-            moneyResults.Add(moneyValidator.Validate(new Money(1100, Currency.BYN)));
+            var moneyResults = new List<ValidationResult<Money>>
+            {
+                moneyValidator.Validate(new Money(50, Currency.BYN)),
+                moneyValidator.Validate(new Money(1100, Currency.USD)),
+                moneyValidator.Validate(new Money(50, Currency.USD)),
+                moneyValidator.Validate(new Money(1100, Currency.BYN))
+            };
 
             moneyResults.ForEach(x => Console.WriteLine(string.Join(Environment.NewLine, x.ErrorMessages)));
         }

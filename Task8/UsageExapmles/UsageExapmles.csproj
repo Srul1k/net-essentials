@@ -6,16 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Task3\MoneyLibrary\MoneyLibrary.csproj" />
+    <ProjectReference Include="..\..\Task4\ShapeLibrary\ShapeLibrary.csproj" />
     <ProjectReference Include="..\FluentValidatorLibrary\FluentValidatorLibrary.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="MoneyLibrary">
-      <HintPath>..\..\Task3\MoneyLibrary\bin\Debug\netcoreapp3.1\MoneyLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="ShapeLibrary">
-      <HintPath>..\..\Task4\ShapeLibrary\bin\Debug\netcoreapp3.1\ShapeLibrary.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

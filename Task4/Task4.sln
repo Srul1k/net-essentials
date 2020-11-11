@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeLibrary", "ShapeLibrary\ShapeLibrary.csproj", "{33B77EF6-B9B1-4114-988D-89339AE2D8BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapeLibrary", "ShapeLibrary\ShapeLibrary.csproj", "{33B77EF6-B9B1-4114-988D-89339AE2D8BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamplesOfCases", "ExamplesOfCases\ExamplesOfCases.csproj", "{9BF92D7B-B0EB-405E-8A8F-E9E35EB1CD34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExamplesOfCases", "ExamplesOfCases\ExamplesOfCases.csproj", "{9BF92D7B-B0EB-405E-8A8F-E9E35EB1CD34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeLibrary.Tests", "ShapeLibrary.Tests\ShapeLibrary.Tests.csproj", "{C7F054D6-47D6-48CA-B1E3-F02C74377565}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9BF92D7B-B0EB-405E-8A8F-E9E35EB1CD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BF92D7B-B0EB-405E-8A8F-E9E35EB1CD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BF92D7B-B0EB-405E-8A8F-E9E35EB1CD34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7F054D6-47D6-48CA-B1E3-F02C74377565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7F054D6-47D6-48CA-B1E3-F02C74377565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7F054D6-47D6-48CA-B1E3-F02C74377565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F054D6-47D6-48CA-B1E3-F02C74377565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

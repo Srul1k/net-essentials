@@ -10,7 +10,8 @@ namespace ConsoleCalculator
 
             try
             {
-                Calculator.Solve(args[0], args[1], args[2]);
+                string result = Calculator.Solve(args[0], args[1], args[2]);
+                Console.WriteLine(result);
             }
             catch
             {

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleCalculator
+﻿namespace ConsoleCalculator
 {
-    class Calculator
+    public static class Calculator
     {
-        public static void Solve(string a, string b, string operation)
+        public static string Solve(string a, string b, string operation)
         {
             if (CalculatorHelper.DoubleTryParseWithSpecificRange(a, out double x) &&
                 CalculatorHelper.DoubleTryParseWithSpecificRange(b, out double y))
@@ -14,23 +10,18 @@ namespace ConsoleCalculator
                 switch (operation)
                 {
                     case "A":
-                        Console.WriteLine(x + y);
-                        break;
+                        return (x + y).ToString();
                     case "D":
-                        Console.WriteLine(x / y);
-                        break;
+                        return (x / y).ToString();
                     case "M":
-                        Console.WriteLine(x * y);
-                        break;
+                        return (x * y).ToString();
                     case "S":
-                        Console.WriteLine(x - y);
-                        break;
+                        return (x - y).ToString();
                     default:
-                        Console.WriteLine("error");
-                        break;
+                        return "error";
                 }
             }
-            else Console.WriteLine("error");
+            else return ("error");
         }
     }
 }

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 namespace ShapeLibrary.Tests
 {
     [TestFixture]
-    public class ShapeAreaCalculator_CalculateShould
+    public class ShapeAreaCalculatorTests
     {
         [Test]
-        public void ShapeAreaCalculator_Calculate_ReturnCorrectArea()
+        public void Calculate_MultipleShapesProvided_ReturnsCorrectArea()
         {
             var shapes = new List<Shape>()
             {
@@ -17,17 +17,9 @@ namespace ShapeLibrary.Tests
             };
 
             IShapeAreaCalculator calculator = new ShapeAreaCalculator();
-
-            double exceptedResult = 0.0;
-            foreach(var s in shapes)
-            {
-                exceptedResult += s.GetArea();
-            }
-
             var actualResult = calculator.Calculate(shapes);
 
-
-            Assert.AreEqual(exceptedResult, actualResult);
+            Assert.AreEqual(16.5685835, actualResult, 1e-7);
         }
     }
 }

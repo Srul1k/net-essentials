@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Task3\MoneyLibrary\MoneyLibrary.csproj" />
+    <ProjectReference Include="..\..\Task4\ShapeLibrary\ShapeLibrary.csproj" />
+    <ProjectReference Include="..\FluentValidatorLibrary\FluentValidatorLibrary.csproj" />
+  </ItemGroup>
+
+</Project>

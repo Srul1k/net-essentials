@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
 
 namespace ConsoleCalculator.Tests
 {
@@ -7,41 +6,15 @@ namespace ConsoleCalculator.Tests
     [SetCulture("en-US")]
     public class Calculator_SolveShould
     {
-        private double InitializationOfOperationResult(double a, double b, string operation)
+        [TestCase(30.02, 5.9, "M", "177.118")]
+        [TestCase(10000.00000, 30.1, "S", "9969.9")]
+        [TestCase(100.00, 20.1, "A", "120.1")]
+        [TestCase(100, 50, "D", "2")]
+        public void Solve_ReturnCorrectResult(double a, double b, string operation, string expectedResult)
         {
-            double x = Double.NaN;
-
-            switch (operation)
-            {
-                case "A":
-                    x = a + b;
-                    break;
-                case "D":
-                    x = a / b;
-                    break;
-                case "M":
-                    x = a * b;
-                    break;
-                case "S":
-                    x = a - b;
-                    break;
-            }
-
-            return x;
-        }
-
-        [TestCase(30.02, 5.9, "M")]
-        [TestCase(10000.00000, 30.1, "S")]
-        [TestCase(100.00, 20.1, "A")]
-        [TestCase(100, 50, "D")]
-        public void Solve_ReturnCorrectResult(double a, double b, string operation)
-        {
-            double x = InitializationOfOperationResult(a, b, operation);
-
             var actualResult = Calculator.Solve(a.ToString(), b.ToString(), operation);
-            var exceptedResult = x.ToString();
 
-            Assert.AreEqual(exceptedResult, actualResult);
+            Assert.AreEqual(expectedResult, actualResult);
         }
 
         [TestCase("O", "1", "A")]

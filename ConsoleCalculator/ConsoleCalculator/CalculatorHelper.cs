@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleCalculator
+﻿namespace ConsoleCalculator
 {
-    class CalculatorHelper
+    public static class CalculatorHelper
     {
         public static bool DoubleTryParseWithSpecificRange(string s, out double x)
         {
@@ -12,7 +8,7 @@ namespace ConsoleCalculator
             if (buffer.Length > 1)
                 if (buffer[1].Length > 5)
                 {
-                    x = double.NaN;
+                    double.TryParse(s, out x);
                     return false;
                 }
 

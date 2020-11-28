@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programming\\Projects\\Git\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\ConsoleCalculator.csproj": {}
+    "E:\\Programming\\Projects\\GitHub\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\ConsoleCalculator.csproj": {}
   },
   "projects": {
-    "E:\\Programming\\Projects\\Git\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\ConsoleCalculator.csproj": {
+    "E:\\Programming\\Projects\\GitHub\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\ConsoleCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programming\\Projects\\Git\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\ConsoleCalculator.csproj",
+        "projectUniqueName": "E:\\Programming\\Projects\\GitHub\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\ConsoleCalculator.csproj",
         "projectName": "ConsoleCalculator",
-        "projectPath": "E:\\Programming\\Projects\\Git\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\ConsoleCalculator.csproj",
+        "projectPath": "E:\\Programming\\Projects\\GitHub\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\ConsoleCalculator.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "E:\\Programming\\Projects\\Git\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\obj\\",
+        "outputPath": "E:\\Programming\\Projects\\GitHub\\net-essentials\\ConsoleCalculator\\ConsoleCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

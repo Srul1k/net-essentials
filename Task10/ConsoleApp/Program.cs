@@ -36,7 +36,10 @@ namespace ConsoleApp
             }
             finally
             {
-                if (sr != null) sr.Close();
+                if (sr != null)
+                {
+                    sr.Close();
+                }
             }
             
             foreach (var p in persons)

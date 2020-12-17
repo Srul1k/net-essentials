@@ -21,8 +21,14 @@
             }
 
             int ageValue;
-            if (int.TryParse(age, out ageValue) && ageValue >= 0) Age = ageValue;
-            else throw new PersonNotCreatedException($"Person cannot be created name : {name}, gender : {gender}, age : {age}");
+            if (int.TryParse(age, out ageValue) && ageValue >= 0)
+            {
+                Age = ageValue;
+            }
+            else
+            {
+                throw new PersonNotCreatedException($"Person cannot be created name : {name}, gender : {gender}, age : {age}");
+            }
         }
 
         public override string ToString()

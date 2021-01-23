@@ -6,14 +6,14 @@ namespace ConsoleApp
 {
     class Program
     {
-        static void Main()
+        static async Task Main()
         {
             //CreateTaskWithDelay();
-            //Create10TasksWithDelay();
-            //Create10TasksWithoutDelay();
+            //await Create10TasksWithDelay();
+            //await Create10TasksWithoutDelay();
         }
 
-        static void CreateTaskWithDelay()
+        private static void CreateTaskWithDelay()
         {
             CancellationTokenSource cancelTokenSource = new CancellationTokenSource(2000);
             CancellationToken token = cancelTokenSource.Token;
@@ -22,7 +22,7 @@ namespace ConsoleApp
             task.Wait();
         }
 
-        static void Create10TasksWithDelay()
+        private static async Task Create10TasksWithDelay()
         {
             CancellationTokenSource cancelTokenSource = new CancellationTokenSource(2000);
             CancellationToken token = cancelTokenSource.Token;
@@ -34,10 +34,10 @@ namespace ConsoleApp
                 tasks[i] = WorkWithTasks.CreateTask(token);
             }
 
-            Task.WaitAll(tasks);
+            await Task.WhenAll(tasks);
         }
 
-        static void Create10TasksWithoutDelay()
+        private static async Task Create10TasksWithoutDelay()
         {
             CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
             CancellationToken token = cancelTokenSource.Token;
@@ -49,7 +49,7 @@ namespace ConsoleApp
                 tasks[i] = WorkWithTasks.CreateTask(token);
             }
 
-            Task.WaitAny(tasks);
+            await Task.WhenAny(tasks);
         }
     }
 }

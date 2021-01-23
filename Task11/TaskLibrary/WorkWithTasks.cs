@@ -6,12 +6,12 @@ namespace TaskLibrary
 {
     public static class WorkWithTasks
     {
+        private static Random rnd = new Random();
         public static Task CreateTask(CancellationToken ct = default)
         {
-            Random rnd = new Random();
             int iterationsMax = rnd.Next(5, 30);
 
-            return Task.Run(() =>
+            return Task.Run(async () =>
             {
                 for (int i = 0; i < iterationsMax; i++)
                 {
@@ -20,9 +20,9 @@ namespace TaskLibrary
                         return;
                     }
 
+                    await Task.Delay(rnd.Next(200, 300));
                     Console.WriteLine($"Thread:{Thread.CurrentThread.ManagedThreadId}. " +
                         $"IterationsMax: {iterationsMax}. IterationCurrent: {i}");
-                    Thread.Sleep(rnd.Next(200, 300));
                 }
             });
         }
